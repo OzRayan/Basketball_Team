@@ -78,9 +78,6 @@ def prepare_data(arg, num):
     ])
     return list_
 
-def except():
-    exce
-
 
 def main():
     """Main menu for stats tool"""
