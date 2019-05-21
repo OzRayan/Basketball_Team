@@ -88,7 +88,7 @@ def main():
             menu_choice = int(input(pt.prompt_main))
             if menu_choice == 2:
                 exit_()
-            if menu_choice == 1:
+            elif menu_choice == 1:
                 clean()
                 while 1:
                     try:
@@ -97,15 +97,21 @@ def main():
                         if option_choice == 4:
                             clean()
                             break
-                        if option_choice in TEAMS.keys():
+                        elif option_choice in TEAMS.keys():
                             clean()
                             input(pt.prompt_team.format(
                                 *prepare_data(TEAMS[option_choice], option_choice)))
                             clean()
+                        else:
+                            clean()
+                            print("Choose from given numbers!")
                     except ValueError:
                         print(pt.prompt_error)
                     except KeyboardInterrupt:
                         exit_()
+            else:
+                clean()
+                print("Choose from given numbers!")
         except ValueError:
             print(pt.prompt_error)
         except KeyboardInterrupt:
